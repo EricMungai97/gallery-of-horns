@@ -1,6 +1,7 @@
 // imports
 import React from 'react';
 import Header from './Header.js';
+import data from './data.json';
 import Main from './Main.js';
 import Footer from './Footer.js';
 
