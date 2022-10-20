@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import './Hornedbeast.css'
+import '../Hornedbeast.css'
 import Col from 'react-bootstrap/Col';
 
 class HornedBeast extends React.Component {
@@ -12,7 +12,8 @@ class HornedBeast extends React.Component {
 
   }
 
-  handleLikes = () => {
+  handleImageClick = () => {
+    this.props.handleOpenModal(this.props.id)
     this.setState({
       imageClicked: this.state.imageClicked + 1
     });
@@ -22,18 +23,24 @@ class HornedBeast extends React.Component {
     return (
       <>
         <Col className='m-4'>
-          <Card className= 'p-3'>
-            <Card.Img variant="top" onClick={this.handleLikes} src={this.props.image_url} alt={this.props.description} title={this.props.title} />
+          <Card className='p-3'>
+            <Card.Img variant="top"
+              onClick={this.handleImageClick}
+              src={this.props.image_url}
+              alt={this.props.description}
+              title={this.props.title} />
             <Card.Body>
-              <Card.Title>{this.props.title}</Card.Title>
-              <Card.Text>{this.props.description}</Card.Text>
+              <Card.Title ><h2>{this.props.title}</h2></Card.Title>
+              <Card.Text>
+                <p>{this.props.description}</p>
+              </Card.Text>
               <p>Click My image If I'm your Favorite!</p>
-              <p >❤️ {this.state.imageClicked} Likes</p>
-              <p>{this.props.description}</p>
-              
+              <span>❤️ {this.state.imageClicked} Likes</span>
+
+
             </Card.Body>
           </Card>
-          </Col>
+        </Col>
         {/* <h2>{this.props.title}</h2>
         <p >❤️ {this.state.imageClicked} Likes</p>
         <img onClick={this.handleLikes} src={this.props.image_url} alt={this.props.description} title={this.props.title} />
