@@ -11,16 +11,7 @@ class Animalform extends React.Component {
     }
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    let selected = event.target.selected.value;
-    this.setState({
-      selectedHorns: selected
-    })
-  }
-
-  
-  render() {
+   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group >
