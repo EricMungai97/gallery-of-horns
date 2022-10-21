@@ -4,16 +4,9 @@ import Form from 'react-bootstrap/Form';
 
 
 class Animalform extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedHorns: '',
-    }
-  }
-
-   render() {
+  render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form>
         <Form.Group >
           <Form.Label>View Beast by Number of Horns</Form.Label>
           <Form.Select name="selected" id="" onChange={this.props.onChange}>
