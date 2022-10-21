@@ -46,34 +46,43 @@ class App extends React.Component {
   handleSelect = (event) => {
     let selected = event.target.value;
     console.log('selected', selected);
-    if(selected === '1'){
-
-      let newData = data.filter(animal => animal.horns === 1);
-      this.setState({
-        sortedData: newData
-      })
-    } else if (selected === '2'){
-      let newData = data.filter(animal => animal.horns === 2);
-      this.setState({
-        sortedData: newData
-      })
-    } else if (selected === '3'){
-      let newData = data.filter(animal => animal.horns === 3);
-      this.setState({
-        sortedData: newData
-      })
-    } else if(selected === '100'){
-      let newData = data.filter(animal => animal.horns === 100);
-      this.setState({
-        sortedData: newData
-      })
-    } else {
-      this.setState({
-        sortedData: data
-      })
+    if(selected) {
+      let newData = data.filter(animal => animal.horns === parseInt(selected));
+      this.setState({sortedData: newData});
+    } else{
+      this.setState({sortedData: data});
     }
-
   }
+
+  // LONGER WAY TO DO IT
+  //   if(selected === '1'){
+
+  //     let newData = data.filter(animal => animal.horns === 1);
+  //     this.setState({
+  //       sortedData: newData
+  //     })
+  //   } else if (selected === '2'){
+  //     let newData = data.filter(animal => animal.horns === 2);
+  //     this.setState({
+  //       sortedData: newData
+  //     })
+  //   } else if (selected === '3'){
+  //     let newData = data.filter(animal => animal.horns === 3);
+  //     this.setState({
+  //       sortedData: newData
+  //     })
+  //   } else if(selected === '100'){
+  //     let newData = data.filter(animal => animal.horns === 100);
+  //     this.setState({
+  //       sortedData: newData
+  //     })
+  //   } else {
+  //     this.setState({
+  //       sortedData: data
+  //     })
+  //   }
+
+  // }
   render() {
     return (
       <>
