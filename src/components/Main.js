@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 
 class Main extends React.Component {
   render() {
-    let hornedAnimals = this.props.data.map((animal, index) => {
+    let hornedAnimals = this.props.data.map((animal, id) => {
       return <HornedBeast
           image_url={animal.image_url}
           title={animal.title}
