@@ -24,16 +24,11 @@ class App extends React.Component {
     }
   }
 
-  handleOpenModal = (key) => {
-    this.setState({ showModal: true, });
-    let newData = data.filter((animal) => {
-      return animal._id === key;
-
-   
+  handleOpenModal = (animalObj) => {
+    this.setState({ 
+      showModal: true, 
+      likedBeast: animalObj
     })
-    this.setState({likedBeast: newData[0]})
-    console.log(newData);
-
   }
 
 
@@ -48,41 +43,13 @@ class App extends React.Component {
     console.log('selected', selected);
     if(selected) {
       let newData = data.filter(animal => animal.horns === parseInt(selected));
+      console.log(newData);
       this.setState({sortedData: newData});
     } else{
       this.setState({sortedData: data});
     }
   }
-
-  // LONGER WAY TO DO IT
-  //   if(selected === '1'){
-
-  //     let newData = data.filter(animal => animal.horns === 1);
-  //     this.setState({
-  //       sortedData: newData
-  //     })
-  //   } else if (selected === '2'){
-  //     let newData = data.filter(animal => animal.horns === 2);
-  //     this.setState({
-  //       sortedData: newData
-  //     })
-  //   } else if (selected === '3'){
-  //     let newData = data.filter(animal => animal.horns === 3);
-  //     this.setState({
-  //       sortedData: newData
-  //     })
-  //   } else if(selected === '100'){
-  //     let newData = data.filter(animal => animal.horns === 100);
-  //     this.setState({
-  //       sortedData: newData
-  //     })
-  //   } else {
-  //     this.setState({
-  //       sortedData: data
-  //     })
-  //   }
-
-  // }
+ 
   render() {
     return (
       <>
