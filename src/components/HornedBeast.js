@@ -13,7 +13,7 @@ class HornedBeast extends React.Component {
   }
 
   handleImageClick = () => {
-    this.props.handleOpenModal(this.props.id);
+    this.props.handleOpenModal(this.props.animalObj);
     this.setState({
       imageClicked: this.state.imageClicked + 1
     });

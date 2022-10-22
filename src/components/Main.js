@@ -13,6 +13,7 @@ class Main extends React.Component {
           key={animal._id}
           handleOpenModal={this.props.handleOpenModal}
           id={animal._id}
+          animalObj={animal}
         />
     });
 
